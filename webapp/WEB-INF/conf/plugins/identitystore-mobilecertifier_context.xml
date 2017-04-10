@@ -11,23 +11,27 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
        
-    <!-- library notifyGru -->
-    <bean id="identitystore-mobilecertifier.lib-notifygru.apiManagerTransport" class="fr.paris.lutece.plugins.librarynotifygru.rs.service.NotificationTransportApiManagerRest">
-        <property name="notificationEndPoint">
-            <value>http://127.0.0.1:9092/lutece/rest/notification/send</value>
+    <!-- Certifier -->
+    <bean id="identitystore-mobilecertifier.certifier" class="fr.paris.lutece.plugins.identitystore.modules.mobilecertifier.service.certifier.MobileCertifier" >
+        <property name="code" value="mobilecertifier" />
+        <property name="name" value="Mobile Certifier" />
+        <property name="description" value="Certificateur de numero de mobile." />
+        <property name="certificateLevel" value="3" />
+        <property name="expirationDelay" value="-1" />
+        <property name="iconUrl" value="images/admin/skin/plugins/identitystore/modules/mobilecertifier/mobile.png" />
+        <property name="certifiableAttributesList">
+            <list>
+                <value>mobile_phone</value>
+            </list>
         </property>
-        <property name="apiManagerEndPoint">
-            <value>http://127.0.0.1:9092/lutece/rest/api/token</value>
+        <property name="idDemandType" value="402" />
+        <property name="idCloseCrmStatus" value="1" />
+        <property name="idCloseDemandStatus" value="1" />
+        <property name="demandPrefix" value="MOC" />
+        <property name="notificationService">
+            <ref bean="identitystore-grucertifier.lib-notifygru.notificationService"/>
         </property>
     </bean>
-    <bean id="identitystore-mobilecertifier.lib-notifygru.restTransport" class="fr.paris.lutece.plugins.librarynotifygru.rs.service.NotificationTransportRest">
-        <property name="notificationEndPoint">
-            <value>http://localhost:8080/lutece/rest/notification/send</value>
-        </property>
-    </bean> 
-    <bean id="identitystore-mobilecertifier.lib-notifygru.notificationService" class="fr.paris.lutece.plugins.librarynotifygru.services.NotificationService">
-        <constructor-arg ref="identitystore-mobilecertifier.lib-notifygru.apiManagerTransport"/>
-    </bean> 
     
 
 </beans>
