@@ -13,7 +13,7 @@
        
     <!-- Certifier -->
     <bean id="identitystore-mobilecertifier.certifier" class="fr.paris.lutece.plugins.identitystore.modules.mobilecertifier.service.certifier.MobileCertifier" >
-        <property name="code" value="mobilecertifier" />
+        <constructor-arg type="java.lang.String" value = "mobilecertifier"/>
         <property name="name" value="Mobile Certifier" />
         <property name="description" value="Certificateur de numero de mobile." />
         <property name="certificateLevel" value="3" />

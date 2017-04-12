@@ -35,6 +35,7 @@ package fr.paris.lutece.plugins.identitystore.modules.mobilecertifier.service.ce
 
 import fr.paris.lutece.plugins.identitystore.modules.grucertifier.service.GruCertifier;
 import fr.paris.lutece.portal.service.i18n.I18nService;
+
 import java.util.Locale;
 
 /**
@@ -42,7 +43,15 @@ import java.util.Locale;
  */
 public class MobileCertifier extends GruCertifier
 {
-    private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_NAME = "module.identitystore.mobilecertifier.senderName";
+    /**
+	 * @param strCode
+	 */
+    public MobileCertifier( String strCode )
+    {
+	    super( strCode );
+    }
+
+	private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_NAME = "module.identitystore.mobilecertifier.senderName";
     private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_MAIL = "module.identitystore.mobilecertifier.senderMail";
     private static final String MESSAGE_GRU_NOTIF_DASHBOARD_STATUS_TEXT = "module.identitystore.mobilecertifier.gru.notif.dashboard.statusText";
     private static final String MESSAGE_GRU_NOTIF_DASHBOARD_MESSAGE = "module.identitystore.mobilecertifier.gru.notif.dashboard.message";
