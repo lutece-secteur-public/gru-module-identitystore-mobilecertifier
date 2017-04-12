@@ -44,14 +44,14 @@ import java.util.Locale;
 public class MobileCertifier extends GruCertifier
 {
     /**
-	 * @param strCode
-	 */
+     * @param strCode
+     */
     public MobileCertifier( String strCode )
     {
-	    super( strCode );
+        super( strCode );
     }
 
-	private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_NAME = "module.identitystore.mobilecertifier.senderName";
+    private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_NAME = "module.identitystore.mobilecertifier.senderName";
     private static final String MESSAGE_GRU_NOTIF_EMAIL_SENDER_MAIL = "module.identitystore.mobilecertifier.senderMail";
     private static final String MESSAGE_GRU_NOTIF_DASHBOARD_STATUS_TEXT = "module.identitystore.mobilecertifier.gru.notif.dashboard.statusText";
     private static final String MESSAGE_GRU_NOTIF_DASHBOARD_MESSAGE = "module.identitystore.mobilecertifier.gru.notif.dashboard.message";
@@ -62,25 +62,25 @@ public class MobileCertifier extends GruCertifier
     private static final String MESSAGE_GRU_NOTIF_EMAIL_MESSAGE = "module.identitystore.mobilecertifier.gru.notif.email.message";
     private static final String MESSAGE_GRU_NOTIF_AGENT_MESSAGE = "module.identitystore.mobilecertifier.gru.notif.agent.message";
     private static final String MESSAGE_GRU_NOTIF_AGENT_STATUS_TEXT = "module.identitystore.mobilecertifier.gru.notif.agent.statusText";
-    
+
     /**
-     * {@inheritDoc} 
+     * {@inheritDoc}
      */
     @Override
     protected void initNotifyGruConfig( Locale locale )
     {
-        //set Messages for Dashboard
+        // set Messages for Dashboard
         setMessageGruNotifDashboardMessage( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_DASHBOARD_MESSAGE, locale ) );
         setMessageGruNotifDashboardSenderName( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_DASHBOARD_SENDER_NAME, locale ) );
         setMessageGruNotifDashboardData( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_DASHBOARD_DATA, locale ) );
         setMessageGruNotifDashboardStatusText( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_DASHBOARD_STATUS_TEXT, locale ) );
         setMessageGruNotifDashboardSubject( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_DASHBOARD_SUBJECT, locale ) );
-        
-        //set Messages for Agent notification
+
+        // set Messages for Agent notification
         setMessageGruNotifAgentMessage( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_AGENT_MESSAGE, locale ) );
         setMessageGruNotifAgentStatusText( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_AGENT_STATUS_TEXT, locale ) );
-        
-        //set Messages for broadcast email notification
+
+        // set Messages for broadcast email notification
         setMessageGruNotifEmailMessage( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_EMAIL_MESSAGE, locale ) );
         setMessageGruNotifEmailSubject( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_EMAIL_SUBJECT, locale ) );
         setMessageGruNotifSenderName( I18nService.getLocalizedString( MESSAGE_GRU_NOTIF_EMAIL_SENDER_NAME, locale ) );
